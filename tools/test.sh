@@ -18,6 +18,10 @@ if [[ -n $1 && -d $1 ]]; then
   DEST=$1
 fi
 
+apt-get install rubygems
+
+gem install bundler
+
 bundle exec htmlproofer $DEST \
   --disable-external \
   --check-html \

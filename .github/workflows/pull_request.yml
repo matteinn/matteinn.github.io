@@ -1,0 +1,15 @@
+on: pull_request
+name: Pull Request Check
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.6'
+    - name: Test
+      uses: skx/github-action-tester@master
+      with:
+        script: tools/test.sh
