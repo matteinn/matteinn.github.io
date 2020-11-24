@@ -15,7 +15,13 @@ layout: compress
   {% assign lang = 'en' %}
 {% endif %}
 
-<html lang="{{ lang }}" mode="dark" >
+{% capture prefer_mode %}
+  {% if site.theme_mode != "dual" %}
+    mode="{{ site.theme_mode }}"
+  {% endif %}
+{% endcapture %}
+
+<html lang="{{ lang }}" {{ prefer_mode }} >
 
   {% include head.html %}
 
