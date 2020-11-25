@@ -6,21 +6,24 @@
 * MIT Licensed
 */
 
+@import "_colors/light-syntax";
 @import "_colors/dark-syntax";
 
-html[mode=dark] {
-  @include dark-syntax;
-}
+html:not([mode]),
 html[mode=light] {
+  @include light-syntax;
+}
+html[mode=dark] {
   @include dark-syntax;
 }
 
 @media (prefers-color-scheme: dark) {
+  html:not([mode]),
   html[mode=dark] {
     @include dark-syntax;
   }
   html[mode=light] {
-    @include dark-syntax;
+    @include light-syntax;
   }
 }
 

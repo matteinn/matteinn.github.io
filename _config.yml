@@ -60,6 +60,17 @@ google_analytics:
     proxy_endpoint: ''
     cache: false  # pv data local cache, good for the users from GFW area.
 
+# Prefer color scheme setting, available values:
+#
+#     dual   - Follow the system prefer color by default, and a toggle will display
+#              in the left bottom of Sidebar, which used for switch the theme between dark and light.
+#
+#     light  - Use the light color scheme
+#
+#     dark   - Use the dark color scheme
+#
+theme_mode: dual
+
 # boolean type, global switch for ToC in posts.
 toc: true
 
