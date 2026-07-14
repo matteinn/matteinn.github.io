@@ -4,7 +4,7 @@ title: About
 
 Hey 👋 I'm Matteo Innocenti, welcome to my website.
 
-I'm a computer engineer who's been building apps for 12 years.
+I'm a computer engineer who's been building apps for 15 years.
 
 My main interests are in the mobile apps land with native Android and iOS apps above any alternatives.
 There are many chances you are using at least one of them on a daily basis without even knowing, from music to weather forecasts, social networks, food delivery, shopping, tourist guides and many b2b setups. Hope you enjoyed the ride!
