@@ -35,6 +35,10 @@ Post content in markdown...
 
 Site-wide settings (title, tagline, social links, Google Analytics id) live in `src/config.ts`.
 
+## License
+
+Dual-licensed (see [LICENSE](LICENSE)): blog posts and written content are [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), the site's code is MIT.
+
 ## Deploy
 
 Every push to `master` builds and deploys the site via GitHub Actions (`.github/workflows/pages.yml`). The custom domain is configured through `public/CNAME`.

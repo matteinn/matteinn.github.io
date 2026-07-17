@@ -9,6 +9,6 @@ export const SITE = {
   github: 'matteinn',
   twitter: 'matteinn',
   mastodon: 'https://mastodon.world/@matteinn',
-  email: 'matteo@appstyx.com',
+  email: 'matteo.innocenti@me.com',
   googleAnalyticsId: 'G-48K1G4HEK0',
 };
