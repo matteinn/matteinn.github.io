@@ -1,7 +1,7 @@
 /*
  * Site-wide styles.
- * The dark palette matches the previous Jekyll (Chirpy) custom theme;
- * the light palette is a new counterpart built around the same teal accent.
+ * Warm editorial palette: cream/near-white light mode and warm charcoal dark
+ * mode, sharing a burnt-orange accent.
  */
 
 :root[data-theme='dark'] {
