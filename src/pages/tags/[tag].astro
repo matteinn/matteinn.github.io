@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import { getSortedPosts } from '../../utils';
+
+export async function getStaticPaths() {
+  const posts = await getSortedPosts();
+  const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
+  return tags.map((tag) => ({
+    params: { tag },
+    props: { tag, posts: posts.filter((post) => post.data.tags.includes(tag)) },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<Base title={tag} description={`Posts tagged "${tag}"`}>
+  <h1 class="page-title">
+    Tag: <span class="tag">{tag}</span>
+  </h1>
+  <PostList posts={posts} />
+</Base>

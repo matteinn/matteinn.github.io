@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://matteinn.com/sitemap-index.xml

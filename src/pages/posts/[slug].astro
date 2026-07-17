@@ -1,0 +1,60 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import { getSortedPosts } from '../../utils';
+
+export async function getStaticPaths() {
+  const posts = await getSortedPosts(); // newest first
+  return posts.map((post, i) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      // chronological neighbours
+      prev: posts[i + 1] ?? null,
+      next: posts[i - 1] ?? null,
+    },
+  }));
+}
+
+const { post, prev, next } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base title={post.data.title} description={post.data.description}>
+  <article>
+    <header class="post-header">
+      <h1>{post.data.title}</h1>
+      <div class="post-meta">
+        <FormattedDate date={post.data.date} />
+        <span class="tag-list">
+          {post.data.tags.map((tag) => <a class="tag" href={`/tags/${tag}/`}>{tag}</a>)}
+        </span>
+      </div>
+    </header>
+    <div class="post-content">
+      <Content />
+    </div>
+  </article>
+
+  {
+    (prev || next) && (
+      <nav class="post-nav" aria-label="Post navigation">
+        {prev ? (
+          <a href={`/posts/${prev.id}/`} class="prev">
+            <span class="direction">← Older</span>
+            {prev.data.title}
+          </a>
+        ) : (
+          <span />
+        )}
+        {next && (
+          <a href={`/posts/${next.id}/`} class="next">
+            <span class="direction">Newer →</span>
+            {next.data.title}
+          </a>
+        )}
+      </nav>
+    )
+  }
+</Base>
