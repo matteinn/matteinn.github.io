@@ -10,8 +10,8 @@ export default defineConfig({
     shikiConfig: {
       // Dual themes: switched via the `data-theme` attribute (see global.css)
       themes: {
-        light: 'github-light',
-        dark: 'dracula',
+        light: 'one-light',
+        dark: 'one-dark-pro',
       },
     },
   },

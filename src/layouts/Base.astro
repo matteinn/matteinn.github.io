@@ -38,6 +38,14 @@ const { pathname } = Astro.url;
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content={`@${SITE.twitter}`} />
 
+    <!-- Font: Merriweather everywhere -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,400..900;1,18..144,400&display=swap"
+    />
+
     <!-- Mastodon verification -->
     <link rel="me" href={SITE.mastodon} />
 
