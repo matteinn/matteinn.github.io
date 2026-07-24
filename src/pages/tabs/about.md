@@ -12,6 +12,8 @@ Chances are you're using at least one of them on a daily basis without even know
 
 I'm the co-founder of [Appstyx](https://appstyx.com?utm_source=matteinn) _Developing Awesomeness_, an IT company with a deep focus on mobile app development. Since 2010 we've shipped apps used by hundreds of millions of people, together with the web platforms and cloud backends that power them. Lately we've also been bringing AI features and immersive AR/VR experiences into the mix.
 
+The latest project we've launched is [MyPorter](https://myporter.ai?utm_source=matteinn), an AI WhatsApp assistant that handles guest communication for short-term rental hosts.
+
 While in grad school I wrote a [paper](https://ieeexplore.ieee.org/document/5711454) about unsupervised learning for image classification, _Fast image clustering of unknown source images_, presented at the 2010 IEEE International Workshop on Information Forensics and Security.
 
 Feel free to get in touch for any questions or just to say hi. You can find me almost everywhere online under the handle [@matteinn](https://twitter.com/matteinn).
