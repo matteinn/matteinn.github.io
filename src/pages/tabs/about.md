@@ -1,6 +1,9 @@
 ---
 layout: ../../layouts/MarkdownPage.astro
 title: About
+description: >-
+  About Matteo Innocenti, computer engineer from Florence, Italy and
+  co-founder of Appstyx, building native iOS and Android apps for 16 years.
 ---
 
 Hey 👋 I'm Matteo Innocenti, welcome to my website.

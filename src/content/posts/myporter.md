@@ -6,6 +6,7 @@ description: >-
   Why we decided to build an AI assistant for short-term rental hosts as a
   WhatsApp bot instead of yet another app, and some notes on how it's put
   together under the hood.
+image: /assets/img/posts/myporter/social-preview.png
 ---
 
 A few old friends and I have been hosts ourselves for a while, so we know the drill firsthand: guests write to you at 11pm asking for the WiFi password, at 7am because they can't figure out the induction hob, and at check-in time from the wrong address because Google Maps sent them somewhere else entirely. None of it is hard to answer, there's just a lot of it, and it never happens at a convenient time.

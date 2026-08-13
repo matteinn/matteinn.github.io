@@ -1,25 +1,32 @@
 ---
+import { getImage, Image } from 'astro:assets';
 import '../styles/global.css';
 import { SITE } from '../config';
+import avatar from '../assets/avatar.jpeg';
+import defaultOgImage from '../assets/og-default.png';
 
 interface Props {
   title?: string;
   description?: string;
+  /* Absolute or site-relative URL to a per-page social card; falls back to the site default */
+  image?: string;
   /* Set on blog post pages: enables article OG tags and BlogPosting JSON-LD */
   article?: { date: Date; tags: string[] };
 }
 
-const { title, description = SITE.description, article } = Astro.props;
+const { title, description = SITE.description, image, article } = Astro.props;
 const pageTitle = title ? `${title} | ${SITE.title}` : SITE.title;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const { pathname } = Astro.url;
-const ogImage = new URL('/assets/img/avatar.jpeg', Astro.site);
+const optimizedDefaultOgImage = await getImage({ src: defaultOgImage, width: 1200, height: 630 });
+const ogImage = new URL(image ?? optimizedDefaultOgImage.src, Astro.site);
+const personImage = new URL(avatar.src, Astro.site);
 
 const personSchema = {
   '@type': 'Person',
   name: SITE.author,
   url: Astro.site?.toString(),
-  image: ogImage.toString(),
+  image: personImage.toString(),
   sameAs: [
     `https://github.com/${SITE.github}`,
     `https://twitter.com/${SITE.twitter}`,
@@ -84,8 +91,10 @@ const schema = article
         </>
       )
     }
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content={`@${SITE.twitter}`} />
+    <meta name="twitter:title" content={title ?? SITE.title} />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
@@ -173,7 +182,7 @@ const schema = article
     <header class="site-header">
       <div class="container">
         <a href="/" aria-hidden="true" tabindex="-1">
-          <img class="site-avatar" src="/assets/img/avatar.jpeg" alt="" width="48" height="48" />
+          <Image class="site-avatar" src={avatar} alt="" width={48} height={48} />
         </a>
         <div class="site-identity">
           <p class="site-title"><a href="/">{SITE.title}</a></p>

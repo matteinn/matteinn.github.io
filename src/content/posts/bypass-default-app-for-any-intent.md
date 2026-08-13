@@ -44,11 +44,11 @@ You wouldn't be surprised to see this in the AndroidManifest.xml file:
 
 When clicking a `example.com` link users will be prompted with an app chooser listing all apps that can handle such link, most likely all the browser apps installed and the app we are talking about.
 
-![Chooser](/assets/img/posts/intent-default-app/chooser.jpg)
+![Android app chooser dialog listing browser apps that can open the link](/assets/img/posts/intent-default-app/chooser.jpg)
 
 Android gives you the ability to choose the default app and you may choose to "always" use that. That's awesome as you don't really want to annoy your users whenever they click on any of those supported links.
 
-![Chooser](/assets/img/posts/intent-default-app/open-links.jpg)
+![Android "Open by default" settings screen for choosing a default link-handling app](/assets/img/posts/intent-default-app/open-links.jpg)
 
 Now let's say that we don't want to handle some of the `example.com` links in the app and redirect users to their preferred browser. There are at least a couple of reasons to do that:
 - you aren't able to specify a sort of blacklist of links that the app can't handle because of the `IntentFilter` path syntax [limitations](https://developer.android.com/guide/topics/manifest/data-element). In this case even though the app has been launched you want to bounce users back to their browser;
