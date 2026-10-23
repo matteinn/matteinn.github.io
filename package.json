@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.12",
-    "@astrojs/sitemap": "^3.4.1",
-    "astro": "^7.2.8",
-    "fast-xml-parser": "^5.10.1"
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.4.0",
+    "fast-xml-parser": "^5.11.2"
   },
   "overrides": {
     "nanoid": "^3.3.17"
